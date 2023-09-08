@@ -67,6 +67,7 @@ jobs:
       - name: yarn build
         run: | 
           yarn build:all
+          ls
       
       # - name: Build and Push Container
       #   run: |-
