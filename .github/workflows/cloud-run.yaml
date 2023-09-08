@@ -71,8 +71,8 @@ jobs:
       
       - name: Build and Push Container
         run: |-
-          docker build . -f packages/backend/Dockerfile -t "${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_LOCATION }}//${{ env.SERVICE }}:lates
-          docker push "${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_LOCATION }}//${{ env.SERVICE }}:lates
+          docker build . -f packages/backend/Dockerfile -t "${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_LOCATION }}/${{ env.SERVICE }}:latest
+          docker push "${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_LOCATION }}/${{ env.SERVICE }}:latest
 
       # - name: set up docker buildx
       #   uses: docker/setup-buildx-action@v2
@@ -84,10 +84,10 @@ jobs:
       #     push: true
       #     platforms: linux/amd64,linux/arm64
       #     tags: |
-      #       "${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_LOCATION }}//${{ env.SERVICE }}:latest" 
+      #       "${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_LOCATION }}/${{ env.SERVICE }}:latest" 
 
       - name: 'deploy cloud-run'
         uses: 'google-github-actions/deploy-cloudrun@v1'
         with:
-          image: '"${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_LOCATION }}//${{ env.SERVICE }}:lates'
+          image: '"${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_LOCATION }}/${{ env.SERVICE }}:latest'
           service: '${{ env.SERVICE }}'
