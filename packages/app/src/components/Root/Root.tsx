@@ -26,6 +26,7 @@ import {
 } from '@backstage/core-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import DevLogoFull from './DevLogoFull';
 
 const useSidebarLogoStyles = makeStyles({
   root: {
@@ -49,7 +50,7 @@ const SidebarLogo = () => {
   return (
     <div className={classes.root}>
       <Link to="/" underline="none" className={classes.link} aria-label="Home">
-        {isOpen ? <LogoFull /> : <LogoIcon />}
+        {isOpen ? <DevLogoFull /> : <LogoIcon />}
       </Link>
     </div>
   );
