@@ -98,6 +98,8 @@ jobs:
           image: '${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_LOCATION }}/${{ env.SERVICE }}'
           service: '${{ env.SERVICE }}'
           flags: --ingress all
+          env_vars: |
+              GH_PAT_TOKEN=${{ secrets.GH_PAT_TOKEN }}
 
       - name: Enabling all traffic to cloud run
         run: |-
