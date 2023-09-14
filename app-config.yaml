@@ -75,8 +75,8 @@ catalog:
     - allow: [Component, API, System, Domain, Resource, Location, User, Group, Template]
   locations:
 
-    - type: file
-      target: ../../scaffolder/create-web-app.yaml
+    - type: url
+      target: https://github.com/gabriel-dantas98/backstage-scaffolders/blob/main/basic-react-app/create-web-app.yaml
 
     # Backstage example components
     - type: url
