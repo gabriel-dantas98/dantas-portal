@@ -35,7 +35,6 @@ import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { ThemeProvider, CssBaseline } from '@material-ui/core';
 import { myTheme } from './theme';
-import LogoFull from './components/Root/LogoFull';
 import StyleIcon from '@material-ui/icons/Style';
 
 const app = createApp({
@@ -57,17 +56,19 @@ const app = createApp({
       catalogIndex: catalogPlugin.routes.catalogIndex,
     });
   },
-  themes: [{
-    id: 'my-theme',
-    title: 'DevPortal Theme',
-    variant: 'dark',
-    icon: <StyleIcon />,
-    Provider: ({ children }) => (
-      <ThemeProvider theme={myTheme}>
-        <CssBaseline>{children}</CssBaseline>
-      </ThemeProvider>
-    ),
-  }]
+  themes: [
+    {
+      id: 'custom-theme',
+      title: 'DevPortal Theme',
+      variant: 'dark',
+      icon: <StyleIcon />,
+      Provider: ({ children }) => (
+        <ThemeProvider theme={myTheme}>
+          <CssBaseline>{children}</CssBaseline>
+        </ThemeProvider>
+      ),
+    },
+  ],
 });
 
 const routes = (

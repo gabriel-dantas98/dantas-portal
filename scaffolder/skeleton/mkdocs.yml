@@ -2,7 +2,8 @@ site_name: ${{values.component_id | dump}}
 site_description: ${{values.description | dump}}
 
 nav:
-  - Introduction: index.md
+  - Getting started: index.md
+  - Local setup: local-setup.md
 
 plugins:
   - techdocs-core

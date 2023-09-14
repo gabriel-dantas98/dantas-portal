@@ -14,7 +14,7 @@ spec:
     - title: Provide some simple information
       required:
         - app_name
-        - app_name
+        - description
       properties:
         app_name:
           title: App Name
@@ -25,6 +25,10 @@ spec:
           title: Description
           type: string
           description: Help others understand what this app is for.
+        surge_token:
+          title: Surge Token for deployment
+          type: string
+          description: Surge for publishing your site
         owner:
           title: Owner
           type: string
@@ -66,6 +70,11 @@ spec:
           - github.com
         description: This is ${{ parameters.app_name }}
         repoUrl: ${{ parameters.repoUrl }}
+        secrets:
+          SURGE_TOKEN: ${{ parameters.surge_token }}
+          SURGE_DNS: ${{ parameters.app_name }}.surge.sh
+        repoVariables:
+          SURGE_DNS: ${{ parameters.app_name }}.surge.sh
 
     - id: register
       name: Register

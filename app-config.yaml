@@ -22,7 +22,7 @@ backend:
     # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
     # Default Helmet Content-Security-Policy values can be removed by setting the key to false
   cors:
-    origin: http://localhost:3000
+    origin: http://localhost:3001
     methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
     credentials: true
   # This is for local development only, it is not recommended to use this in production
@@ -72,8 +72,12 @@ scaffolder:
 catalog:
   readonly: true
   rules:
-    - allow: [Component, API, System, Domain, Resource, Location, User, Group]
+    - allow: [Component, API, System, Domain, Resource, Location, User, Group, Template]
   locations:
+
+    - type: file
+      target: ../../scaffolder/create-web-app.yaml
+
     # Backstage example components
     - type: url
       target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all-components.yaml
@@ -105,7 +109,3 @@ catalog:
     # The backstage library repository
     - type: url
       target: https://github.com/backstage/backstage/blob/master/catalog-info.yaml
-
-
-    - type: file
-      target: ../../scaffolder/create-web-app.yaml
