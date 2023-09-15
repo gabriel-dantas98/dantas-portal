@@ -1,6 +1,18 @@
-# [Backstage](https://backstage.io)
+# [Backstage - DevHUB]
 
-This is your newly scaffolded Backstage App, Good Luck!
+1. Fill env variables in .github/workflows/cloud-run.yaml
+
+2. Create service account in Google Cloud and insert JSON in Github Repository as a secret with GCP_SA_KEY name
+
+3. Create Github Personal Access Token and insert as a secret GH_PAT_TOKEN in repository
+
+## Locally
+
+Export github token to env variable
+
+```sh
+  export GH_PAT_TOKEN=<your token>
+```
 
 To start the app, run:
 
@@ -8,14 +20,3 @@ To start the app, run:
 yarn install
 yarn dev
 ```
-
-# TODO
-
-[] - Configure Github Integration
-[] - Create new base repository with sample react project
-[] - Use Scaffolder to create new repositories with base repository and github action
-[] - Show basic integrations in the catalog
-  [] - APIDocs with Swagger
-  [] - Github Information
-  [] - TechDocs
-  [] - TODO Plugin
