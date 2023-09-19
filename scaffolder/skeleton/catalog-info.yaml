@@ -18,6 +18,9 @@ metadata:
     - url: ${{values.github_url | dump}}/releases
       title: Releases
       icon: github
+    - url: ${{values.github_url | dump}}/releases
+      title: Releases
+      icon: github
   annotations:
     github.com/project-slug: ${{values.destination.owner + "/" + values.destination.repo}}
     backstage.io/techdocs-ref: dir:.
