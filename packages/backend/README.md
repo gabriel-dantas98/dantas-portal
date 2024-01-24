@@ -10,7 +10,7 @@ Our goal is to eventually amend the create-app flow of the CLI, such that a
 production ready version of a backend skeleton is made alongside the frontend
 app. Until then, feel free to experiment here!
 
-## Development
+### Development
 
 To run the example backend, first go to the project root and run
 
