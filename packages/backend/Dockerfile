@@ -34,6 +34,12 @@ WORKDIR /app
 
 # This switches many Node.js dependencies to production mode.
 ENV NODE_ENV production
+pwd
+cd ../../
+pwd
+yarn install 
+yarn tsc
+yarn build
 
 # Copy repo skeleton first, to avoid unnecessary docker cache invalidation.
 # The skeleton contains the package.json of each package in the monorepo,
